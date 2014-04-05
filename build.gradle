@@ -1,0 +1,16 @@
+apply plugin: 'java'
+apply plugin: 'shadow'
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+repositories { mavenCentral() }
+
+jar.manifest { attributes 'Main-Class': 'IdentMe' }
+
+dependencies { compile 'io.undertow:undertow-core:1.0.3.Final' }
+
+buildscript {
+    repositories { jcenter() }
+    dependencies { classpath 'com.github.jengelman.gradle.plugins:shadow:0.8' }
+}
